@@ -1,0 +1,27 @@
+{
+  "name": "generator-nasgor",
+  "version": "0.0.1",
+  "description": "Generator for node service",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "test": "mocha test/"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "git-remote-origin-url": "^2.0.0",
+    "yeoman-generator": "^1.0.0"
+  },
+  "author": "RJ Masikome <rj@masiko.me>",
+  "license": "MIT",
+  "files": [
+    "app"
+  ],
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "mocha": "^4.0.1"
+  }
+}
