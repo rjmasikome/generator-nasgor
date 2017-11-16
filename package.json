@@ -1,7 +1,7 @@
 {
   "name": "generator-nasgor",
-  "version": "0.0.1",
-  "description": "Generator for node service",
+  "version": "0.0.2",
+  "description": "A yeoman based generator to get a personal boilerplate for JS or TS Service Edit",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
@@ -15,6 +15,14 @@
     "git-remote-origin-url": "^2.0.0",
     "yeoman-generator": "^1.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjmasikome/generator-nasgor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rjmasikome/generator-nasgor/issues"
+  },
+  "homepage": "https://github.com/rjmasikome/generator-nasgor#readme",
   "author": "RJ Masikome <rj@masiko.me>",
   "license": "MIT",
   "files": [
