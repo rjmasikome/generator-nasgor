@@ -4,7 +4,7 @@
   "description": "A yeoman based generator to get a personal boilerplate for JS or TS Service Edit",
   "main": "generators/app/index.js",
   "scripts": {
-    "start": "node .",
+    "start": "node bin/",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "mocha test/"
