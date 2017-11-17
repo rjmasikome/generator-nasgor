@@ -9,9 +9,6 @@
     "lint:fix": "eslint --fix .",
     "test": "mocha test/"
   },
-  "bin": {
-    "nasgor": "./bin/index.js"
-  },
   "keywords": [
     "yeoman-generator"
   ],
@@ -29,9 +26,6 @@
   "homepage": "https://github.com/rjmasikome/generator-nasgor#readme",
   "author": "RJ Masikome <rj@masiko.me>",
   "license": "MIT",
-  "files": [
-    "app"
-  ],
   "devDependencies": {
     "eslint": "^4.11.0",
     "mocha": "^4.0.1"
