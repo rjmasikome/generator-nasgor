@@ -1,6 +1,6 @@
 {
   "name": "generator-nasgor",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A yeoman based generator to get a personal boilerplate for JS or TS Service Edit",
   "main": "generators/app/index.js",
   "scripts": {
