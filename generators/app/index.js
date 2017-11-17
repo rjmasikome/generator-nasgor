@@ -1,3 +1,4 @@
+const path = require("path");
 const Generator = require("yeoman-generator");
 const gitUrl = require("git-remote-origin-url");
 const makeConfig = require("./config");
@@ -115,14 +116,14 @@ module.exports = class extends Generator {
 
   generator() {
     
-    this.fs.copy(this.templatePath("static", ".*"), this.destinationPath());
+    this.fs.copy(path.join(__dirname, "templates/static/.*"), this.destinationPath());
 
     if (this.props.type === "ts") {
       this.devDependencies.push("ts-node", "tslint", "typescript");
     }
     
     if (this.props.type === "js") {
-      this.fs.copy(this.templatePath("js", ".*"), this.destinationPath());
+      this.fs.copy(path.join(__dirname, "templates/js/.*"), this.destinationPath());
     }
 
     if (this.props.modules.length > 0) {
