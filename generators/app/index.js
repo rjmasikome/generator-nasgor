@@ -149,12 +149,12 @@ module.exports = class extends Generator {
       
       let yarnInstalled = null;
 
-      // try {
-      //   cmd("yarn --version").toString();
-      //   yarnInstalled = true;
-      // } catch (err) {
-      //   yarnInstalled = false;
-      // }
+      try {
+        cmd("yarn --version").toString();
+        yarnInstalled = true;
+      } catch (err) {
+        yarnInstalled = false;
+      }
 
       if (yarnInstalled) {
         self.yarnInstall(deps, opts);
