@@ -1,8 +1,10 @@
 const Generator = require("yeoman-generator");
 const gitUrl = require("git-remote-origin-url");
 const makeConfig = require("./config");
+const cmd = require('child_process').execSync;
 
 module.exports = class extends Generator {
+
   constructor(args, opts) {
     super(args, opts);
 
@@ -79,7 +81,7 @@ module.exports = class extends Generator {
       type    : "input",
       name    : "homepage",
       message : "What is the website?",
-      default : this.props && this.props.git || "https://rj.masiko.me" 
+      default : this.props && this.props.git || "https://npmjs.com" 
     });
 
     prompts.push({
@@ -105,8 +107,8 @@ module.exports = class extends Generator {
 
     return this.prompt(prompts)
       .then((answers) => {
-        answers.modules = answers.modules && answers.modules.split(",");
-        answers.keywords = answers.keywords && answers.keywords.split(",") || [];        
+        answers.modules = answers.modules && answers.modules.split(",").map(x => x.trim());
+        answers.keywords = answers.keywords && answers.keywords.split(",").map(x => x.trim()) || [];        
         this.props = answers;
       });
   }
@@ -141,13 +143,38 @@ module.exports = class extends Generator {
 
   install () {
 
+    const self = this;
+    
+    const _packageInstall = (deps, opts) => {
+      
+      let yarnInstalled = null;
+
+      // try {
+      //   cmd("yarn --version").toString();
+      //   yarnInstalled = true;
+      // } catch (err) {
+      //   yarnInstalled = false;
+      // }
+
+      if (yarnInstalled) {
+        self.yarnInstall(deps, opts);
+      }
+      else {
+        if (opts.dev) {
+          opts["save-dev"] = true;
+        }
+        self.npmInstall(deps, opts);
+      }
+    }
+
+
     if (this.dependencies) {
-      this.yarnInstall(this.dependencies, {
+      _packageInstall(this.dependencies, {
         save: true
       });
     }
 
-    this.yarnInstall(this.devDependencies, {
+    _packageInstall(this.devDependencies, {
       dev: true
     });
   }

@@ -2,8 +2,9 @@
 
 "use strict";
 
+const path = require("path");
 const yeoman = require("yeoman-environment");
-const generator = require("../generators/app");
+const generator = require(path.join(__dirname, "../generators/app"));
 
 const env = yeoman.createEnv();
 env.registerStub(generator, "nasgor:service");
