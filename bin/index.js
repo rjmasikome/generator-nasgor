@@ -1,3 +1,7 @@
+#! /usr/bin/env node
+
+"use strict";
+
 const yeoman = require("yeoman-environment");
 const generator = require("../generators/app");
 
