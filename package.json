@@ -1,13 +1,16 @@
 {
   "name": "generator-nasgor",
-  "version": "0.1.7",
+  "version": "0.1.3",
   "description": "A yeoman based generator to get a personal boilerplate for JS or TS Service Edit",
   "main": "generators/app/index.js",
   "scripts": {
-    "start": "node bin/",
+    "start": "node .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "mocha test/"
+  },
+  "bin": {
+    "nasgor": "./bin/index.js"
   },
   "keywords": [
     "yeoman-generator"
