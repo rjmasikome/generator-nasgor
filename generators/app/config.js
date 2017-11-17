@@ -6,7 +6,7 @@ module.exports = function(generator) {
   const pkg = {
     name: props.name,
     description: props.description,
-    version: '0.0.1',
+    version: "0.0.1",
     homepage: props.homepage,
     main: lib,
     repository: props.repository,
@@ -18,13 +18,13 @@ module.exports = function(generator) {
     contributors: [],
     bugs: {},
     directories: {
-      test: 'test/'
+      test: "test/"
     },
-    'scripts': {
+    "scripts": {
       start: `node ${lib}/`,
       lint: props.type === "js" ? `eslint ${lib}/. test/. --config .eslintrc.json` : `tslint ${lib}/. test/.`,
-      'lint:fix' : props.type === "js" ? `eslint --fix ${lib}/. test/. --config .eslintrc.json` : `tslint --fix ${lib}/. test/.`,
-      test: 'mocha test/ --recursive --exit'
+      "lint:fix" : props.type === "js" ? `eslint --fix ${lib}/. test/. --config .eslintrc.json` : `tslint --fix ${lib}/. test/.`,
+      test: "mocha test/ --recursive --exit"
     }
   };
 
