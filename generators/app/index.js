@@ -2,7 +2,7 @@ const path = require("path");
 const Generator = require("yeoman-generator");
 const gitUrl = require("git-remote-origin-url");
 const makeConfig = require("./config");
-const cmd = require('child_process').execSync;
+const cmd = require("child_process").execSync;
 
 module.exports = class extends Generator {
 
@@ -120,6 +120,7 @@ module.exports = class extends Generator {
 
     if (this.props.type === "ts") {
       this.devDependencies.push("ts-node", "tslint", "typescript");
+      this.fs.copy(path.join(__dirname, "templates/ts/*"), this.destinationPath());      
     }
     
     if (this.props.type === "js") {
